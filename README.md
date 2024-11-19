@@ -15,3 +15,4 @@ Este projeto tem como objetivo criar um sistema simples para cadastro e gerencia
 
 - **Java**: Linguagem de programação utilizada para a implementação do sistema.
 - **Orientação a Objetos (OO)**: Implementação dos conceitos de classes, objetos, herança, composição, e encapsulamento.
+- **Eclipse IDE JAVA**: IDE utilizada no desenvolvimento e implemtentação do código.
