@@ -16,6 +16,7 @@ public class Time {
         return nome;
     }
 
+    //relacionamento de classes
     public List<Jogador> getJogadores() {
         return jogadores;
     }

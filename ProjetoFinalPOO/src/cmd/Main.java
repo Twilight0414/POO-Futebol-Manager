@@ -1,5 +1,5 @@
 package cmd;
-
+import java.util.Scanner;
 import application.Jogador;
 import application.Time;
 import application.Arbitro;
@@ -38,6 +38,38 @@ public class Main {
 
             // Imprimindo os detalhes da partida
             System.out.println(partida);
+            
+            //Interação com o Usuario - Quais jogadores jogaram na partida
+            Scanner scanner = new Scanner(System.in);
+            String escolha;
+            
+            do {
+            	System.out.println("De qual time você quer ver os jogadores? Digite o nome do time:");
+            	String timeEscolhido = scanner.nextLine();
+            
+            
+            	//If simples que se o usuario digitou o nome do time 1, irá mostrar os dados do time 1
+            	if (timeEscolhido.equalsIgnoreCase(time1.getNome())) {
+            		System.out.println("Jogadores do " + time1.getNome() + ":");
+            		for (Jogador jogador : time1.getJogadores()) {
+            			System.out.println(" - " + jogador.getNome() + " (Camisa " + jogador.getNumero() + ")");
+            		}
+            	} else if (timeEscolhido.equalsIgnoreCase(time2.getNome())) { //se não, se foi digitado o nome do time 2
+            		System.out.println("Jogadores do " + time2.getNome() + ":");
+            		for (Jogador jogador : time2.getJogadores()) {
+            			System.out.println(" - " + jogador.getNome() + " (Camisa " + jogador.getNumero() + ")");
+            		}
+            	} else {
+            		System.out.println("Time não Encontrado");
+            	}
+            
+            	System.out.println("\nDeseja ver os jogadores do outro time? (s/n)");
+            	escolha = scanner.nextLine();
+        } while (escolha.equalsIgnoreCase("s"));
+        
+        	System.out.println("Programa encerrado. Até a proxima!");
+            
+            scanner.close();
 
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
